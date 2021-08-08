@@ -1,0 +1,200 @@
+/*******************
+ * Rofi color theme
+ *
+ * Based on the arthur color scheme for rofi by Qball
+ * https://github.com/davatorium/rofi-themes
+ *
+ * File: elementary.rasi
+ * Desc: Elementary color theme for Rofi
+ * Author: Beimer Campos <http://bemercampos.com/>
+ * Source: https://github.com/dbeimer/elementary-rofi-theme
+ * Modified: Sat Aug 07 2021
+ */
+
+configuration {
+
+    // The display name of this browser
+    display-ssh:                   "  ";
+    // The display name of this browser
+    display-run:                    "";
+    // The display name of this browser
+    display-drun:                   "";
+    // The display name of this browser
+    display-window:                 "";
+    display-combi:                  "";
+    show-icons: true;
+}
+
+* {
+    foreground:  #5e5e5e;
+    backlight:   #d4d4d4;
+    background-color:  transparent;
+    dark: #7e8087;
+    
+    silver-100:#fafafa;
+    silver-300:#d4d4d4;
+    silver-500: #abacae;
+    silver-700: #7e8087;
+
+    black:       #3d352a;
+    lightblack:  #554444;
+    tlightblack:  #554444cc;
+
+    red:         #cd5c5c;
+    lightred:    #cc5533;
+
+    green:       #86af80;
+    lightgreen:  #9bdb4d;
+
+    yellow:      #e8ae5b;
+    lightyellow:     #ffa75d;
+
+    blue:      #6495ed;
+    lightblue:     #87ceeb;
+
+    magenta:      #deb887;
+    lightmagenta:     #996600;
+
+    cyan:      #b0c4de;
+    tcyan:      #ccb0c4de;
+    lightcyan:     #b0c4de;
+
+    white:      #bbaa99;
+    lightwhite:     #ddccbb;
+
+    highlight:     underline bold #000000;
+
+    strawberry-100:#ff8c82;
+    strawberry-900:#7a0000;
+
+    transparent: rgba(0,0,0,0);
+    font: "Sauce Code Powerline Medium 10";
+}
+
+#window {
+    location: center;
+    anchor:   center;
+    transparency: "screenshot";
+    padding: 10px;
+    border:  0px;
+    border-radius: 5px;
+    color: @black;
+    background-color: @transparency;
+    spacing: 0;
+    children:  [vertb, mainbox];
+    orientation: horizontal;
+}
+
+#mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    handle-color: @silver-300;
+    padding:      0;
+    background-color:@silver-100;
+}
+
+#message {
+    border-color:@black;
+    border:  0px 1px 1px 1px;
+    padding: 5;
+    background-color: @strawberry-100;
+}
+#message {
+    font: "Sauce Code Powerline ExtraLight 8";
+    color: @strawberry-900;
+}
+
+#inputbar {
+    color: @black;
+    padding: 11px;
+    background-color: @silver-300;
+    border: 1px;
+    border-radius:  5px 5px 0px 0px;
+    border-color: @foreground;
+    font: "Sauce Code Pro 18";
+}
+
+
+
+#listview {
+    border-radius: 0px 0px 5px 5px;
+    border-color: @foreground;
+    border: 0px 1px 1px 1px;
+    background-color: @silver-100;
+    dynamic: false;
+    lines: 10;
+   
+}
+
+#element {
+    padding: 3px;
+    vertical-align: 0.5;
+    background-color: transparent;
+    color: @foreground;
+    font:inherit;
+}
+#element selected.normal {
+    background-color: @silver-500;
+    color:black;
+}
+#element normal active {
+    foreground: @lightblue;
+}
+#element normal urgent {
+    foreground: @lightred;
+}
+#element alternate normal {
+    background-color:@silver-100;
+}
+#element alternate active {
+    foreground: @lightblue;
+}
+#element alternate urgent {
+    foreground: @lightred;
+}
+#element selected active {
+    background-color: @lightblue;
+    foreground: @dark;
+}
+#element selected urgent {
+    background-color: @lightred;
+    foreground: @dark;
+}
+#element normal normal {
+ background-color: #ffffff;
+}
+
+#vertb {
+    expand: false;
+    children: [ dummy0, sidebar, dummy1  ];
+}
+#dummy0,  dummy1 {
+    expand: true;
+}
+
+#sidebar {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    background-color: @silver-300;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px 0px 1px 1px;
+    border-color: @black;
+}
+
+#button {
+    font: "FontAwesome 22";
+    padding: 6px;
+    color: @black;
+    horizontal-align: 0.5;
+}
+#button selected normal {
+    color: @black;
+    background-color: @silver-500;
+}
